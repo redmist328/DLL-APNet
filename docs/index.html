@@ -61,14 +61,14 @@
 <div>
   <br />
   <p style="text-align: center">
-    <img src="./fig.jpg" width="1500" height="500"/>
+    <img src="./fig.jpg" width="1500" height="1500"/>
   </p>
   <p>
   <figcaption style="text-align:center;">
     </font>
     <font size=3>
-      Fig.1 Overview of the proposed FreeGAN vocoder and the strategies we proposed. The strategies we introduced are highlighted in red italics, 
-       including the use of pseudo-amplitude spectrum as a prior, SNAKE-ConvNeXt V2 blocks, and frequency-weighted anti-wrapping phase loss.
+      Fig.1 Model structure and knowledge distillation strategy of the proposed DLL-APNet vocoder.
+       During training, part of the parameters of DLL-APNet are trained through knowledge distillation from teacher model APNet2.
     </font>
   </figcaption><br><br>
   </p>
@@ -76,7 +76,7 @@
 
 
 
-<a name="2"><h2>Is GAN Necessary for the FreeGAN vocoder?</h2></a>
+<a name="2"><h2>Main Experimental Results</h2></a>
 
 <p>
 </p>
@@ -85,10 +85,9 @@
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -97,43 +96,50 @@
       <td style="text-align: left"><audio src="./B/B_01.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_01.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_01.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_01.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_01.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_01.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 2</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -142,43 +148,50 @@
       <td style="text-align: left"><audio src="./B/B_02.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_02.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_02.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_02.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_02.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_02.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_02.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_02.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_02.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_02.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_02.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 3</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -187,43 +200,50 @@
       <td style="text-align: left"><audio src="./B/B_03.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_03.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_03.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_03.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_03.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_03.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_03.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_03.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_03.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_03.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_03.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 4</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -232,43 +252,50 @@
       <td style="text-align: left"><audio src="./B/B_04.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_04.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_04.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_04.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_04.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_04.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_04.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_04.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_04.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_04.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_04.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 5</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -277,43 +304,50 @@
       <td style="text-align: left"><audio src="./B/B_05.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_05.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_05.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_05.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_05.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_05.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_05.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_05.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_05.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_05.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_05.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 6</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -322,43 +356,50 @@
       <td style="text-align: left"><audio src="./B/B_06.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_06.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_06.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_06.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_06.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_06.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_06.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_06.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_06.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_06.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_06.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
 <h3>Sample 7</h3>
 <table>
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
-      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
+      <th style="text-align: center"><strong>DDL-APNet (proposed)</strong></th>
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -367,428 +408,453 @@
       <td style="text-align: left"><audio src="./B/B_07.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./C/C_07.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./D/D_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./E/E_07.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
-<br>
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>BigVGAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./F/F_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./G/G_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./H/H_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./I/I_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./J/J_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./K/K_07.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>APNet2</strong></th>
+        <th style="text-align: center"><strong>Vocos</strong></th>
+        <th style="text-align: center"><strong>casual HiFi-GAN</strong></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./E/E_07.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./F/F_07.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./G/G_07.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./H/H_07.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>casual iSTFTNet</strong></th>
+        <th style="text-align: center"><strong>casual APNet2</strong></th>
+        <th style="text-align: center"><strong>casual Vocos</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./I/I_07.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./J/J_07.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./K/K_07.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
 <br>
-<br>
-<strong> w/o GAN: GAN-free versions.
+<a name="3"><h2>Discussion on Distillation Weight SelectionMain Experimental Results</h2></a>
+
+<p>
+</p>
+<h3>Sample 1</h3>
+<table>
+    <thead>
+      <tr>
+        <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+        <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+        <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+        <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"><audio src="./L/L_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./M/M_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./N/N_01.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="./O/O_01.wav" controls="" preload=""></audio></td>
+    </tbody>
+  </table>
+  <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left"><audio src="./P/P_01.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./Q/Q_01.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./R/R_01.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./S/S_01.wav" controls="" preload=""></audio></td>
+      </tbody>
+    </table>
   <br>
-  * w/o GAN: GAN-free versions with our proposed
-  improvement strategies. </strong>
-<a name="3"><h2>GAN is Necessary for Which Types of Vocoders?</h2></a>
+  <h3>Sample 2</h3>
+  <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+          <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left"><audio src="./L/L_02.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./M/M_02.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./N/N_02.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="./O/O_02.wav" controls="" preload=""></audio></td>
+      </tbody>
+    </table>
+    <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left"><audio src="./P/P_02.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./Q/Q_02.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./R/R_02.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./S/S_02.wav" controls="" preload=""></audio></td>
+        </tbody>
+      </table>
+    <br>
+    <h3>Sample 3</h3>
+    <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+            <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left"><audio src="./L/L_03.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./M/M_03.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./N/N_03.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="./O/O_03.wav" controls="" preload=""></audio></td>
+        </tbody>
+      </table>
+      <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left"><audio src="./P/P_03.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./Q/Q_03.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./R/R_03.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./S/S_03.wav" controls="" preload=""></audio></td>
+          </tbody>
+        </table>
+      <br>
+      <h3>Sample 4</h3>
+      <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+              <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left"><audio src="./L/L_04.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./M/M_04.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./N/N_04.wav" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="./O/O_04.wav" controls="" preload=""></audio></td>
+          </tbody>
+        </table>
+        <table>
+            <thead>
+              <tr>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left"><audio src="./P/P_04.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./Q/Q_04.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./R/R_04.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./S/S_04.wav" controls="" preload=""></audio></td>
+            </tbody>
+          </table>
+        <br>
+        <h3>Sample 5</h3>
+        <table>
+            <thead>
+              <tr>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+                <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left"><audio src="./L/L_05.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./M/M_05.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./N/N_05.wav" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="./O/O_05.wav" controls="" preload=""></audio></td>
+            </tbody>
+          </table>
+          <table>
+              <thead>
+                <tr>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left"><audio src="./P/P_05.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./Q/Q_05.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./R/R_05.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./S/S_05.wav" controls="" preload=""></audio></td>
+              </tbody>
+            </table>
+          <br>
+          <h3>Sample 6</h3>
+          <table>
+              <thead>
+                <tr>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+                  <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left"><audio src="./L/L_06.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./M/M_06.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./N/N_06.wav" controls="" preload=""></audio></td>
+                  <td style="text-align: left"><audio src="./O/O_06.wav" controls="" preload=""></audio></td>
+              </tbody>
+            </table>
+            <table>
+                <thead>
+                  <tr>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align: left"><audio src="./P/P_06.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./Q/Q_06.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./R/R_06.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./S/S_06.wav" controls="" preload=""></audio></td>
+                </tbody>
+              </table>
+            <br>
+            <h3>Sample 7</h3>
+            <table>
+                <thead>
+                  <tr>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.1</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 0.5</strong></th>
+                    <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 1</strong></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align: left"><audio src="./L/L_07.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./M/M_07.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./N/N_07.wav" controls="" preload=""></audio></td>
+                    <td style="text-align: left"><audio src="./O/O_07.wav" controls="" preload=""></audio></td>
+                </tbody>
+              </table>
+              <table>
+                  <thead>
+                    <tr>
+                      <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 2</strong></th>
+                      <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 5</strong></th>
+                      <th style="text-align: center"><strong>&lambda;<sub>KD</sub> =10</strong></th>
+                      <th style="text-align: center"><strong>&lambda;<sub>KD</sub> = 20</strong></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align: left"><audio src="./P/P_07.wav" controls="" preload=""></audio></td>
+                      <td style="text-align: left"><audio src="./Q/Q_07.wav" controls="" preload=""></audio></td>
+                      <td style="text-align: left"><audio src="./R/R_07.wav" controls="" preload=""></audio></td>
+                      <td style="text-align: left"><audio src="./S/S_07.wav" controls="" preload=""></audio></td>
+                  </tbody>
+                </table>
+              <br>
+<a name="4"><h2>Discussion on Distillation Position Selection</h2></a>
+
+<p>
+</p>
 <h3>Sample 1</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_01.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_01.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_01.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_01.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 2</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_02.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_02.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_02.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_02.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_02.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_02.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_02.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_02.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_02.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 3</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_03.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_03.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_03.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_03.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_03.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_03.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_03.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_03.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_03.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 4</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_04.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_04.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_04.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_04.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_04.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_04.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_04.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_04.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_04.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 5</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_05.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_05.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_05.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_05.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_05.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_05.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_05.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_05.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_05.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 6</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_06.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_06.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_06.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_06.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_06.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_06.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_06.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_06.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_06.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
 <h3>Sample 7</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
-      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 0</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 2</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 4</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 6</strong></th>
+      <th style="text-align: center"><strong>Distilled Numbers = 8</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./abx/A/A_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/B/B_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/C/C_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/D/D_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/E/E_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/F/F_07.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Vocos</strong></th>
-      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
-      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2</strong></th>
-      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
-      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/G/G_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/H/H_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/I/I_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/J/J_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/K/K_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/L/L_07.wav" controls="" preload=""></audio></td>
-  </tbody>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>FreeV</strong></th>
-      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
-      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./abx/M/M_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/N/N_07.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./abx/O/O_07.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./T/T_07.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./U/U_07.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./V/V_07.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./W/X_07.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./X/X_07.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
-<br>
 <br>
